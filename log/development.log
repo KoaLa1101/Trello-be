@@ -1,0 +1,36 @@
+Started GET "/" for ::1 at 2021-03-28 19:19:13 +0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 11.6ms | Allocations: 10293)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/koala/trello-rails-koala1101/public/packs
+[Webpacker] Hash: 15d1bb7b54cf6326b9ba
+Version: webpack 4.44.2
+Time: 2495ms
+Built at: 28.03.2021 19:19:27
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js    124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 13704ms (Views: 13693.7ms | ActiveRecord: 0.0ms | Allocations: 119726)
+
+
+Started GET "/cards" for ::1 at 2021-03-28 19:19:38 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 18.6ms | Allocations: 11755)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 3.4ms | Allocations: 3829)
+Completed 200 OK in 39ms (Views: 30.0ms | ActiveRecord: 4.5ms | Allocations: 28691)
+
+

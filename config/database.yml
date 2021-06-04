@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  user: postgres
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: rubycourse
+
+test:
+  <<: *default
+  database: rubycourse_test
+
+production:
+  <<: *default
+  database: rubycourse_production
+  username: postgres
+  password: <%= ENV['RUBYCOURSE_DATABASE_PASSWORD'] %>
