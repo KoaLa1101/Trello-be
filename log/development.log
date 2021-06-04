@@ -34,3 +34,72 @@ Processing by CardsController#index as HTML
 Completed 200 OK in 39ms (Views: 30.0ms | ActiveRecord: 4.5ms | Allocations: 28691)
 
 
+Started GET "/" for 127.0.0.1 at 2021-06-04 17:44:59 +0300
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 11.8ms | Allocations: 10273)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4123ms (Views: 4117.4ms | ActiveRecord: 0.0ms | Allocations: 122850)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-04 17:45:05 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (7.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 26.9ms | Allocations: 11758)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 10.0ms | Allocations: 3831)
+Completed 200 OK in 78ms (Views: 49.3ms | ActiveRecord: 11.8ms | Allocations: 28424)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2021-06-04 17:45:10 +0300
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.slim within layouts/cards
+  Rendered cards/_form.html.slim (Duration: 25.7ms | Allocations: 7479)
+  Rendered cards/new.html.slim within layouts/cards (Duration: 41.9ms | Allocations: 9539)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.8ms | Allocations: 536)
+Completed 200 OK in 79ms (Views: 72.6ms | ActiveRecord: 0.0ms | Allocations: 17645)
+
+
+Started POST "/cards" for 127.0.0.1 at 2021-06-04 17:45:14 +0300
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"Qli6gRr23sAgSoClL4dy6OBgXgcHVQyAlGyXMTZk9FnFk9i2AgtO1QXxJZ0c+Ab76CiovofGFwc/GgnDtP1d4g==", "card"=>{"title"=>"Hello world"}, "commit"=>"Create Card"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cards_controller.rb:31:in `block in create'
+  [1m[36mCard Create (1.1ms)[0m  [1m[32mINSERT INTO "cards" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Hello world"], ["created_at", "2021-06-04 14:45:14.329806"], ["updated_at", "2021-06-04 14:45:14.329806"]]
+  ↳ app/controllers/cards_controller.rb:31:in `block in create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cards_controller.rb:31:in `block in create'
+Redirected to http://localhost:3000/cards/3
+Completed 302 Found in 9ms (ActiveRecord: 2.2ms | Allocations: 3073)
+
+
+Started GET "/cards/3" for 127.0.0.1 at 2021-06-04 17:45:14 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:69:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 1.7ms | Allocations: 2514)
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 3]]
+  ↳ app/views/cards/show.html.slim:15
+  Rendered cards/show.html.slim within layouts/cards (Duration: 34.4ms | Allocations: 19493)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.7ms | Allocations: 534)
+Completed 200 OK in 50ms (Views: 38.4ms | ActiveRecord: 5.2ms | Allocations: 28763)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-04 17:45:16 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 15.3ms | Allocations: 3053)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 1.0ms | Allocations: 534)
+Completed 200 OK in 35ms (Views: 32.4ms | ActiveRecord: 0.9ms | Allocations: 10893)
+
+
