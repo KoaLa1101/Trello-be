@@ -6,13 +6,13 @@ p.title
   strong
     ' Title:
   = @card.title
-= render "todos/form", card: @card, todo: @card.todo.build
+= render "todos/form", card: @card, todo: @card.todos.build
 
 p
   strong
     ' Todos:
   ol.todos
-    - @card.todo.each do |todo|
+    - @card.todos.each do |todo|
       - if !todo.id.nil?
         li
 
