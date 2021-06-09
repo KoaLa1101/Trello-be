@@ -2,7 +2,7 @@ class TodosController < ApplicationController
 
   def create
     @card = Card.find(params[:card_id])
-    @todo = @card.todos.build(title: params[:title], description: params[:description])
+    @todo = @card.todos.build(title: params[:title], description: params[:description], user_id: params[:user_id])
     if @todo.save
       flash[:notice] = "ToDo was successfully created"
     else

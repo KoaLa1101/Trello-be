@@ -3973,3 +3973,3054 @@ Processing by HomeController#show as HTML
 Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 7446)
 
 
+Started GET "/" for 127.0.0.1 at 2021-06-09 13:52:15 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 9.9ms | Allocations: 10260)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 40.3ms | ActiveRecord: 0.0ms | Allocations: 31076)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-06-09 13:52:16 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 13.9ms | Allocations: 2592)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.0ms | Allocations: 10652)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-06-09 13:52:20 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"VAIixYeU0Yo0LamF34kbBoPYgwU2geHt+83u8qM1PDJc7GwjbEe089rjObye/IUPCqfxAB1XsNR0FjtpM6px5A==", "session"=>{"email"=>"rinat_akhmethanov@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rinat_akhmethanov@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:27:in `remember'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_digest", "$2a$12$oMuu6spU9DcEWbdhjOHzrerDm2h4T4TtXSWDoFqI4MDExRI9Mhe/K"], ["updated_at", "2021-06-09 10:52:20.591665"], ["id", 3]]
+  ↳ app/models/user.rb:27:in `remember'
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:27:in `remember'
+Redirected to http://localhost:8080/users/3
+Completed 302 Found in 496ms (ActiveRecord: 14.5ms | Allocations: 8826)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2021-06-09 13:52:20 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 175)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.2ms | Allocations: 9004)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2021-06-09 13:55:08 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 296)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 28.3ms | ActiveRecord: 3.8ms | Allocations: 26828)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2021-06-09 13:55:09 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 48)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 0.3ms | Allocations: 8038)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 13:55:10 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 29.4ms | Allocations: 20186)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 3.8ms | Allocations: 3862)
+Completed 200 OK in 65ms (Views: 53.6ms | ActiveRecord: 3.0ms | Allocations: 36771)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2021-06-09 14:01:59 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 4.0ms | Allocations: 13914)
+
+
+  
+NoMethodError (undefined method `paginate' for #<Card::ActiveRecord_Associations_CollectionProxy:0x0000563cf3535378>):
+  
+app/controllers/users_controller.rb:5:in `show'
+Started GET "/users/3" for 127.0.0.1 at 2021-06-09 14:06:13 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCard Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" WHERE "cards"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:14
+  Rendered users/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 3544)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 5.3ms | Allocations: 15406)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column cards.user_id does not exist
+LINE 1: SELECT 1 AS one FROM "cards" WHERE "cards"."user_id" = $1 LI...
+                                           ^
+):
+    11:     </section>
+    12:   </aside>
+    13:   <div class="col-md-8">
+    14:     <% if @user.cards.any? %>
+    15:       <h3>Cards (<%= @user.cards.count %>)</h3>
+    16:       <ol class="microposts">
+    17:         <%= render @cards %>
+  
+app/views/users/show.html.erb:14
+Started GET "/" for 127.0.0.1 at 2021-06-09 14:06:47 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 10.0ms | Allocations: 10155)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.0ms | Allocations: 30054)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-06-09 14:06:48 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2591)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 0.0ms | Allocations: 10664)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-06-09 14:06:50 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"s8X8WVFftJ7Y9gHtCsH+WUDbmBErCK5InTgi0qYeNg27K7K/uozR5zY4kdRLtGBQyaTqFADe/3ES4/dJNoF72w==", "session"=>{"email"=>"rinat_akhmethanov@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rinat_akhmethanov@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:30:in `remember'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_digest", "$2a$12$qbKpwcqsOR4OTC4dDdjPr.K44CxGU8sRVI5IJaTMsv9A0/6e6YCGC"], ["updated_at", "2021-06-09 11:06:51.164531"], ["id", 3]]
+  ↳ app/models/user.rb:30:in `remember'
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:30:in `remember'
+Redirected to http://localhost:8080/users/3
+Completed 302 Found in 484ms (ActiveRecord: 4.1ms | Allocations: 3858)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2021-06-09 14:06:51 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCard Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" WHERE "cards"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:14
+  Rendered users/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2264)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.0ms | Allocations: 3299)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column cards.user_id does not exist
+LINE 1: SELECT 1 AS one FROM "cards" WHERE "cards"."user_id" = $1 LI...
+                                           ^
+):
+    11:     </section>
+    12:   </aside>
+    13:   <div class="col-md-8">
+    14:     <% if @user.cards.any? %>
+    15:       <h3>Cards (<%= @user.cards.count %>)</h3>
+    16:       <ol class="microposts">
+    17:         <%= render @cards %>
+  
+app/views/users/show.html.erb:14
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (5022.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rubycourse"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7971227839067702265)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7971227839067702265)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-06-09 14:08:00 +0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 8.7ms | Allocations: 10260)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 37.8ms | ActiveRecord: 0.0ms | Allocations: 31094)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 14:08:01 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 21.2ms | Allocations: 13209)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 3.7ms | Allocations: 3845)
+Completed 200 OK in 53ms (Views: 34.2ms | ActiveRecord: 4.1ms | Allocations: 30162)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2021-06-09 14:08:05 +0300
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.slim within layouts/cards
+  Rendered cards/_form.html.slim (Duration: 12.4ms | Allocations: 5906)
+  Rendered cards/new.html.slim within layouts/cards (Duration: 27.1ms | Allocations: 7979)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 1.4ms | Allocations: 537)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.0ms | Allocations: 16303)
+
+
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 14:08:13 +0300
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"lubDctRnXTlXAiw68GMnqT83G0++KBI6Tmo1nny0aLARLaFFzJrNLHK5iQLDHFO6N3/t9j67Cb3lHKts/i3BCw==", "card"=>{"title"=>"Test user"}, "commit"=>"Create Card"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 6967)
+
+
+  
+NoMethodError (undefined method `user_id' for #<Card:0x00007ff7a0058760>
+Did you mean?  user):
+  
+app/controllers/cards_controller.rb:31:in `block in create'
+app/controllers/cards_controller.rb:30:in `create'
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 14:10:06 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 45.7ms | Allocations: 31815)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 4.1ms | Allocations: 3847)
+Completed 200 OK in 78ms (Views: 61.7ms | ActiveRecord: 3.9ms | Allocations: 49890)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2021-06-09 14:10:08 +0300
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.slim within layouts/cards
+  Rendered cards/_form.html.slim (Duration: 12.1ms | Allocations: 5906)
+  Rendered cards/new.html.slim within layouts/cards (Duration: 21.8ms | Allocations: 7966)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 1.2ms | Allocations: 537)
+Completed 200 OK in 46ms (Views: 42.1ms | ActiveRecord: 0.0ms | Allocations: 16122)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 14:16:22 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 12.7ms | Allocations: 12688)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 2.9ms | Allocations: 3815)
+Completed 200 OK in 29ms (Views: 25.7ms | ActiveRecord: 0.5ms | Allocations: 28955)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-09 14:21:00 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 11.2ms | Allocations: 10260)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 41.3ms | ActiveRecord: 0.0ms | Allocations: 31084)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-06-09 14:21:01 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2592)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 0.0ms | Allocations: 10663)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-06-09 14:21:03 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"B6S9OwEPnHY4DDFuqfKmeuvVHl5ZqzvXH5ChcgGTMTwPSvPd6tz5D9bCoVfohzhzYqpsW3J9au6QS3TpkQx86g==", "session"=>{"email"=>"rinat_akhmethanov@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rinat_akhmethanov@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:30:in `remember'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_digest", "$2a$12$3BONZj9bHXYeJPO1KNX32.Qheg.wIK45B0uuXA5t/fvsXptJRA8Hi"], ["updated_at", "2021-06-09 11:21:04.225351"], ["id", 3]]
+  ↳ app/models/user.rb:30:in `remember'
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:30:in `remember'
+Redirected to http://localhost:8080/users/3
+Completed 302 Found in 509ms (ActiveRecord: 13.2ms | Allocations: 10215)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2021-06-09 14:21:04 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCard Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" WHERE "cards"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:14
+  Rendered users/show.html.erb within layouts/application (Duration: 14.9ms | Allocations: 3426)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.7ms | Allocations: 8110)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column cards.user_id does not exist
+LINE 1: SELECT 1 AS one FROM "cards" WHERE "cards"."user_id" = $1 LI...
+                                           ^
+):
+    11:     </section>
+    12:   </aside>
+    13:   <div class="col-md-8">
+    14:     <% if @user.cards.any? %>
+    15:       <h3>Cards (<%= @user.cards.count %>)</h3>
+    16:       <ol class="microposts">
+    17:         <%= render @cards %>
+  
+app/views/users/show.html.erb:14
+Started GET "/users/3" for 127.0.0.1 at 2021-06-09 14:22:43 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCard Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" WHERE "cards"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:14
+  Rendered users/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2490)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 5.6ms | Allocations: 10547)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column cards.user_id does not exist
+LINE 1: SELECT 1 AS one FROM "cards" WHERE "cards"."user_id" = $1 LI...
+                                           ^
+):
+    11:     </section>
+    12:   </aside>
+    13:   <div class="col-md-8">
+    14:     <% if @user.cards.any? %>
+    15:       <h3>Cards (<%= @user.cards.count %>)</h3>
+    16:       <ol class="microposts">
+    17:         <%= render @cards %>
+  
+app/views/users/show.html.erb:14
+Started GET "/" for 127.0.0.1 at 2021-06-09 14:22:47 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 0.3ms | Allocations: 79)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 7829)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 14:22:49 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 29.0ms | Allocations: 12623)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 7.1ms | Allocations: 3849)
+Completed 200 OK in 55ms (Views: 49.4ms | ActiveRecord: 2.7ms | Allocations: 27795)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2021-06-09 14:22:50 +0300
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.slim within layouts/cards
+  Rendered cards/_form.html.slim (Duration: 9.6ms | Allocations: 4614)
+  Rendered cards/new.html.slim within layouts/cards (Duration: 21.1ms | Allocations: 6677)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.7ms | Allocations: 534)
+Completed 200 OK in 36ms (Views: 32.4ms | ActiveRecord: 0.0ms | Allocations: 14890)
+
+
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 14:22:53 +0300
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"jcUAKGYKZss5QfQMWLmwMO5Uk+IqCgWbxFaIP7vp0PsKDmIffvf23hz6UTRrxsQj5hxlW6qZHhxvIBbNOXB5QA==", "card"=>{"title"=>"sdad"}, "commit"=>"Create Card"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.0ms | Allocations: 1671)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Card.):
+  
+app/controllers/cards_controller.rb:33:in `create'
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 14:23:33 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 42.6ms | Allocations: 31815)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 3.4ms | Allocations: 3847)
+Completed 200 OK in 67ms (Views: 55.6ms | ActiveRecord: 3.6ms | Allocations: 49908)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2021-06-09 14:23:34 +0300
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.slim within layouts/cards
+  Rendered cards/_form.html.slim (Duration: 13.2ms | Allocations: 6047)
+  Rendered cards/new.html.slim within layouts/cards (Duration: 24.2ms | Allocations: 8108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 1.2ms | Allocations: 537)
+Completed 200 OK in 48ms (Views: 45.0ms | ActiveRecord: 0.0ms | Allocations: 16235)
+
+
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 14:23:36 +0300
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"HXpJoWcHvgcjCMzZq1u4Z1hzmexq2U97nrMMJg3araeasSuWf/ouEgazaeGYJMx0UDtvVepKVPw1xZLUj0MEHA==", "card"=>{"title"=>"dasd"}, "commit"=>"Create Card"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 500 Internal Server Error in 183ms (ActiveRecord: 4.6ms | Allocations: 112641)
+
+
+  
+NameError (undefined local variable or method `card' for #<CardsController:0x00007f152c0451a8>):
+  
+app/controllers/cards_controller.rb:33:in `create'
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 14:24:45 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 41.9ms | Allocations: 31815)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 3.6ms | Allocations: 3847)
+Completed 200 OK in 70ms (Views: 56.3ms | ActiveRecord: 3.8ms | Allocations: 49896)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2021-06-09 14:24:47 +0300
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.slim within layouts/cards
+  Rendered cards/_form.html.slim (Duration: 10.9ms | Allocations: 6051)
+  Rendered cards/new.html.slim within layouts/cards (Duration: 19.8ms | Allocations: 8111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.8ms | Allocations: 537)
+Completed 200 OK in 45ms (Views: 40.4ms | ActiveRecord: 0.0ms | Allocations: 16283)
+
+
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 14:24:52 +0300
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"H4uPYESajLb4rhq7iS4XgZSSIOaXzmZ89izZHWhLQVaYQO1XXGcco90Vv4O6UWOSnNrWXxddfftdWkfv6tLo7Q==", "card"=>{"title"=>"reqr"}, "commit"=>"Create Card"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 3.8ms | Allocations: 9154)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Card.):
+  
+app/controllers/cards_controller.rb:33:in `create'
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 14:25:37 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"H4uPYESajLb4rhq7iS4XgZSSIOaXzmZ89izZHWhLQVaYQO1XXGcco90Vv4O6UWOSnNrWXxddfftdWkfv6tLo7Q==", "card"=>{"title"=>"reqr"}, "commit"=>"Create Card"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 7.9ms | Allocations: 13904)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Card.):
+  
+app/controllers/cards_controller.rb:33:in `create'
+Started GET "/card" for 127.0.0.1 at 2021-06-09 14:25:43 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/card"):
+  
+actionpack (6.0.3.7) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.7) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.7) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.7) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.7) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.7) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.7) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.7) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.7) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.3.7) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 14:25:44 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 47.5ms | Allocations: 28736)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 3.8ms | Allocations: 3847)
+Completed 200 OK in 71ms (Views: 68.1ms | ActiveRecord: 0.8ms | Allocations: 44453)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2021-06-09 14:25:46 +0300
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.slim within layouts/cards
+  Rendered cards/_form.html.slim (Duration: 14.1ms | Allocations: 5947)
+  Rendered cards/new.html.slim within layouts/cards (Duration: 22.4ms | Allocations: 8007)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.9ms | Allocations: 534)
+Completed 200 OK in 37ms (Views: 33.8ms | ActiveRecord: 0.0ms | Allocations: 16144)
+
+
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 14:25:48 +0300
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"URyFFoKQ9iMwm/7pEdigY/0lpR+essdcz57Blgbn/67W1+chmm1mNhUgW9Eip9Rw9W1Tph4h3Ntk6F9khH5WFQ==", "card"=>{"title"=>"dasd"}, "commit"=>"Create Card"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms | Allocations: 1492)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Card.):
+  
+app/controllers/cards_controller.rb:33:in `create'
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 14:26:57 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 43.4ms | Allocations: 31815)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 3.5ms | Allocations: 3847)
+Completed 200 OK in 73ms (Views: 58.4ms | ActiveRecord: 3.4ms | Allocations: 49879)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2021-06-09 14:26:58 +0300
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.slim within layouts/cards
+  Rendered cards/_form.html.slim (Duration: 13.8ms | Allocations: 6047)
+  Rendered cards/new.html.slim within layouts/cards (Duration: 25.7ms | Allocations: 8107)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 1.3ms | Allocations: 537)
+Completed 200 OK in 51ms (Views: 47.0ms | ActiveRecord: 0.0ms | Allocations: 16242)
+
+
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 14:27:00 +0300
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"7TjchjF8jcakdZModP5FCZ9AibcCx98/Q5Yse7ErG0Bq876xKYEd04HONhBHgTEalwh/DoJUxLjo4LKJM7Ky+w==", "card"=>{"title"=>"sad"}, "commit"=>"Create Card"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 4.2ms | Allocations: 9156)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Card.):
+  
+app/controllers/cards_controller.rb:33:in `create'
+Started GET "/" for 127.0.0.1 at 2021-06-09 14:29:15 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 9.0ms | Allocations: 10260)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 38.2ms | ActiveRecord: 0.0ms | Allocations: 31094)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-06-09 14:29:16 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 15.0ms | Allocations: 2592)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 0.0ms | Allocations: 10667)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-06-09 14:29:18 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"s/zDKGUtTIs58KGLaxOjkOfjdf8KkQmlACEShX33j6u7Eo3Ojv4p8tc+MbIqZj2ZbpwH+iFHWJyP+sce7WjCfQ==", "session"=>{"email"=>"rinat_akhmethanov@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rinat_akhmethanov@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:30:in `remember'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_digest", "$2a$12$t6jxvVKxTZRMoVp86RUVDet9K3Urtc0YCpJKkyR7sW7GfiRDlcD7e"], ["updated_at", "2021-06-09 11:29:18.809836"], ["id", 3]]
+  ↳ app/models/user.rb:30:in `remember'
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:30:in `remember'
+Redirected to http://localhost:8080/users/3
+Completed 302 Found in 493ms (ActiveRecord: 12.9ms | Allocations: 10217)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2021-06-09 14:29:18 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCard Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" WHERE "cards"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:14
+  Rendered users/show.html.erb within layouts/application (Duration: 13.5ms | Allocations: 3426)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 2.3ms | Allocations: 8140)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column cards.user_id does not exist
+LINE 1: SELECT 1 AS one FROM "cards" WHERE "cards"."user_id" = $1 LI...
+                                           ^
+):
+    11:     </section>
+    12:   </aside>
+    13:   <div class="col-md-8">
+    14:     <% if @user.cards.any? %>
+    15:       <h3>Cards (<%= @user.cards.count %>)</h3>
+    16:       <ol class="microposts">
+    17:         <%= render @cards %>
+  
+app/views/users/show.html.erb:14
+Started GET "/" for 127.0.0.1 at 2021-06-09 14:29:23 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 0.3ms | Allocations: 79)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 7669)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 14:29:24 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 29.7ms | Allocations: 12633)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 3.7ms | Allocations: 3846)
+Completed 200 OK in 52ms (Views: 45.9ms | ActiveRecord: 2.8ms | Allocations: 27821)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2021-06-09 14:29:25 +0300
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.slim within layouts/cards
+  Rendered cards/_form.html.slim (Duration: 10.4ms | Allocations: 4614)
+  Rendered cards/new.html.slim within layouts/cards (Duration: 19.9ms | Allocations: 6673)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.8ms | Allocations: 537)
+Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 0.0ms | Allocations: 15000)
+
+
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 14:29:27 +0300
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"Z1KJarNjAankwUd2bmMYGMVYy2pfCvZDpvlcDe6RGBTgmetdq56RvMF64k5dHGwLzRA909+Z7cQNj8L/bAixrw==", "card"=>{"title"=>"dasdsa"}, "commit"=>"Create Card"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms | Allocations: 1652)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Card.):
+  
+app/controllers/cards_controller.rb:33:in `create'
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 14:30:41 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 44.0ms | Allocations: 31815)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 4.4ms | Allocations: 3847)
+Completed 200 OK in 77ms (Views: 61.9ms | ActiveRecord: 3.9ms | Allocations: 49898)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2021-06-09 14:30:47 +0300
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.slim within layouts/cards
+  Rendered cards/_form.html.slim (Duration: 10.8ms | Allocations: 6047)
+  Rendered cards/new.html.slim within layouts/cards (Duration: 19.0ms | Allocations: 8107)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.8ms | Allocations: 537)
+Completed 200 OK in 45ms (Views: 41.4ms | ActiveRecord: 0.0ms | Allocations: 16276)
+
+
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 14:30:49 +0300
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"e0SvNxoQWsMzrxvGp01slcKA8EZHi96ZlcKyk7FWhjz8j80AAu3K1hYUvv6UMhiGysgG/8cYxR4+tCxhM88vhw==", "card"=>{"title"=>"asdasd"}, "commit"=>"Create Card"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 4.4ms | Allocations: 7498)
+
+
+  
+NoMethodError (undefined method `cards' for nil:NilClass):
+  
+app/controllers/cards_controller.rb:33:in `create'
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 14:31:18 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 39.0ms | Allocations: 31815)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 3.4ms | Allocations: 3847)
+Completed 200 OK in 65ms (Views: 53.8ms | ActiveRecord: 3.7ms | Allocations: 49902)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2021-06-09 14:31:20 +0300
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.slim within layouts/cards
+  Rendered cards/_form.html.slim (Duration: 10.2ms | Allocations: 6047)
+  Rendered cards/new.html.slim within layouts/cards (Duration: 17.9ms | Allocations: 8107)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.9ms | Allocations: 537)
+Completed 200 OK in 40ms (Views: 36.6ms | ActiveRecord: 0.0ms | Allocations: 16272)
+
+
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 14:31:23 +0300
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"+GrEROpLBQ9JZmGwRahPbfwp2buR8Z6CrTGamtPntu5/oaZz8raVGmzdxIh21zt+9GEvAhFihQUGRwRoUX4fVQ==", "card"=>{"title"=>"asdasd"}, "commit"=>"Create Card"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 4.1ms | Allocations: 7494)
+
+
+  
+NoMethodError (undefined method `cards' for nil:NilClass):
+  
+app/controllers/cards_controller.rb:33:in `create'
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 14:31:55 +0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"+GrEROpLBQ9JZmGwRahPbfwp2buR8Z6CrTGamtPntu5/oaZz8raVGmzdxIh21zt+9GEvAhFihQUGRwRoUX4fVQ==", "card"=>{"title"=>"asdasd"}, "commit"=>"Create Card"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 4.8ms | Allocations: 8193)
+
+
+  
+NoMethodError (undefined method `cards' for nil:NilClass):
+  
+app/controllers/cards_controller.rb:33:in `create'
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 14:34:37 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 46.5ms | Allocations: 31815)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 3.5ms | Allocations: 3847)
+Completed 200 OK in 71ms (Views: 59.6ms | ActiveRecord: 3.8ms | Allocations: 49902)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2021-06-09 14:34:38 +0300
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.slim within layouts/cards
+  Rendered cards/_form.html.slim (Duration: 14.1ms | Allocations: 6047)
+  Rendered cards/new.html.slim within layouts/cards (Duration: 25.3ms | Allocations: 8107)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.8ms | Allocations: 537)
+Completed 200 OK in 48ms (Views: 44.7ms | ActiveRecord: 0.0ms | Allocations: 16254)
+
+
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 14:34:42 +0300
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"ueCGA9VIf8clttS+Vb0NiTAmZuzew3c0DarXJWD4uWs+K+Q0zbXv0gANcYZmwnmaOG6QVV5QbLOm3EnX4mEQ0A==", "card"=>{"title"=>"ggrr"}, "commit"=>"Create Card"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 4.1ms | Allocations: 9146)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Card.):
+  
+app/controllers/cards_controller.rb:33:in `create'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (39.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rubycourse"[0m
+  [1m[35m (31.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "rubycourse_test"[0m
+  [1m[35m (98.4ms)[0m  [1m[35mCREATE DATABASE "rubycourse" ENCODING = 'unicode'[0m
+  [1m[35m (95.9ms)[0m  [1m[35mCREATE DATABASE "rubycourse_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "application_records" CASCADE[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "application_records" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "cards" CASCADE[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "cards" ("id" bigserial primary key, "title" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "todos" CASCADE[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "todos" ("id" bigserial primary key, "title" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "card_id" bigint NOT NULL)[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE  INDEX  "index_todos_on_card_id" ON "todos"  ("card_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "password_digest" character varying, "remember_digest" character varying)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mALTER TABLE "todos" ADD CONSTRAINT "fk_rails_65320000bb"
+FOREIGN KEY ("card_id")
+  REFERENCES "cards" ("id")
+[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210609095654)[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201229095212),
+(20201229095415),
+(20201229095913),
+(20201230075556),
+(20210609080340),
+(20210609082343);
+
+[0m
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-06-09 11:45:48.567815"], ["updated_at", "2021-06-09 11:45:48.567815"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "97588024e9f4f1b39bef3913933e1c51590ff0fa"], ["created_at", "2021-06-09 11:45:48.585392"], ["updated_at", "2021-06-09 11:45:48.585392"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "application_records" CASCADE[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "application_records" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "cards" CASCADE[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "cards" ("id" bigserial primary key, "title" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "todos" CASCADE[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE "todos" ("id" bigserial primary key, "title" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "card_id" bigint NOT NULL)[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE  INDEX  "index_todos_on_card_id" ON "todos"  ("card_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "password_digest" character varying, "remember_digest" character varying)[0m
+  [1m[35m (4.9ms)[0m  [1m[35mALTER TABLE "todos" ADD CONSTRAINT "fk_rails_65320000bb"
+FOREIGN KEY ("card_id")
+  REFERENCES "cards" ("id")
+[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210609095654)[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20201229095212),
+(20201229095415),
+(20201229095913),
+(20201230075556),
+(20210609080340),
+(20210609082343);
+
+[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-06-09 11:45:48.743549"], ["updated_at", "2021-06-09 11:45:48.743549"]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-06-09 11:45:48.768700"], ["key", "environment"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "97588024e9f4f1b39bef3913933e1c51590ff0fa"], ["created_at", "2021-06-09 11:45:48.786013"], ["updated_at", "2021-06-09 11:45:48.786013"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7971227839067702265)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7971227839067702265)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-06-09 14:46:13 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 2.8ms | Allocations: 2844)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 11388)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-06-09 14:46:15 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1154)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 0.0ms | Allocations: 9205)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-06-09 14:46:17 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"fF8o5/FeTzv2UmCP02VjUwotIziL5iD2vQ+gHwIqTQx0sWYBGo0qQhic8LaSEP1ag1JRPaAwcc8y1HWEkrUA2g==", "session"=>{"email"=>"rinat_akhmethanov@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rinat_akhmethanov@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 543)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 11.6ms | ActiveRecord: 0.7ms | Allocations: 10480)
+
+
+Started GET "/signUp" for 127.0.0.1 at 2021-06-09 14:46:21 +0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 186)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1701)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 13027)
+
+
+Started GET "/signUp" for 127.0.0.1 at 2021-06-09 14:46:21 +0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 932)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 8329)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-06-09 14:46:33 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Yj2gavPHS00Vh7zHUuw3+oK1CoiaHpwT1MfzK4klV1tdD6e52mrDy8OdmnNOvNe8G29wgoiys0mzCufzejWkZA==", "user"=>{"name"=>"Rinat", "email"=>"rproba@list.ru", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rinat"], ["email", "rproba@list.ru"], ["created_at", "2021-06-09 11:46:33.586635"], ["updated_at", "2021-06-09 11:46:33.586635"], ["password_digest", "$2a$12$b3C6NN7yT1vRs4u3o/D83ul3RLMyeOJ5pOAw6ntTMdWCB6uSed212"]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+Redirected to http://localhost:8080/users/1
+Completed 302 Found in 261ms (ActiveRecord: 2.0ms | Allocations: 3317)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 14:46:33 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCard Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" WHERE "cards"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:14
+  Rendered users/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2554)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.1ms | Allocations: 5395)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column cards.user_id does not exist
+LINE 1: SELECT 1 AS one FROM "cards" WHERE "cards"."user_id" = $1 LI...
+                                           ^
+):
+    11:     </section>
+    12:   </aside>
+    13:   <div class="col-md-8">
+    14:     <% if @user.cards.any? %>
+    15:       <h3>Cards (<%= @user.cards.count %>)</h3>
+    16:       <ol class="microposts">
+    17:         <%= render @cards %>
+  
+app/views/users/show.html.erb:14
+Started GET "/" for 127.0.0.1 at 2021-06-09 14:46:38 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 0.5ms | Allocations: 78)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 7599)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 14:46:39 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (1.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 9.8ms | Allocations: 1251)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.9ms | Allocations: 539)
+Completed 200 OK in 28ms (Views: 24.2ms | ActiveRecord: 1.3ms | Allocations: 9332)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 14:46:39 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 2.6ms | Allocations: 1233)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.7ms | Allocations: 534)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.3ms | Allocations: 9110)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2021-06-09 14:46:40 +0300
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.slim within layouts/cards
+  Rendered cards/_form.html.slim (Duration: 3.8ms | Allocations: 556)
+  Rendered cards/new.html.slim within layouts/cards (Duration: 4.6ms | Allocations: 638)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.7ms | Allocations: 533)
+Completed 200 OK in 36ms (Views: 18.4ms | ActiveRecord: 0.0ms | Allocations: 10922)
+
+
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 14:46:44 +0300
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"XXvY37kU+ynv0KcBvyTT9RWhLInpNX2D/Sr3w9nlJUDasLrooelrPMprAjmMW6fmHenaMGmmZgRWXGkxW3yM+w==", "card"=>{"title"=>"Hello world"}, "commit"=>"Create Card"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms | Allocations: 1633)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Card.):
+  
+app/controllers/cards_controller.rb:33:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7971227839067702265)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7971227839067702265)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 14:52:56 +0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"XXvY37kU+ynv0KcBvyTT9RWhLInpNX2D/Sr3w9nlJUDasLrooelrPMprAjmMW6fmHenaMGmmZgRWXGkxW3yM+w==", "card"=>{"title"=>"Hello world"}, "commit"=>"Create Card"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 4.5ms | Allocations: 63020)
+
+
+  
+NoMethodError (undefined method `title' for #<CardsController:0x000055e9bf0d5918>):
+  
+app/controllers/cards_controller.rb:33:in `create'
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 14:53:17 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"XXvY37kU+ynv0KcBvyTT9RWhLInpNX2D/Sr3w9nlJUDasLrooelrPMprAjmMW6fmHenaMGmmZgRWXGkxW3yM+w==", "card"=>{"title"=>"Hello world"}, "commit"=>"Create Card"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 7.6ms | Allocations: 13919)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Card.):
+  
+app/controllers/cards_controller.rb:33:in `create'
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 14:59:34 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 30.3ms | Allocations: 26583)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 4.1ms | Allocations: 3851)
+Completed 200 OK in 59ms (Views: 46.4ms | ActiveRecord: 1.6ms | Allocations: 44679)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2021-06-09 14:59:35 +0300
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.slim within layouts/cards
+  Rendered cards/_form.html.slim (Duration: 9.5ms | Allocations: 6110)
+  Rendered cards/new.html.slim within layouts/cards (Duration: 12.7ms | Allocations: 8170)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.9ms | Allocations: 538)
+Completed 200 OK in 54ms (Views: 33.6ms | ActiveRecord: 7.7ms | Allocations: 18888)
+
+
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 14:59:38 +0300
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"PqIHYZGw3mdS55Zo/gnr5OV73y4JMqQUfVbfnNgGmLS5aWVWiU1OcndcM1DNdp/37TMpl4mhv5PWIEFuWp8xDw==", "card"=>{"title"=>"dsad"}, "commit"=>"Create Card"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 4.4ms | Allocations: 9168)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Card.):
+  
+app/controllers/cards_controller.rb:37:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7971227839067702265)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7971227839067702265)[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-06-09 15:02:30 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 9.8ms | Allocations: 10260)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 53ms (Views: 45.7ms | ActiveRecord: 0.0ms | Allocations: 31104)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-06-09 15:02:32 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 14.0ms | Allocations: 2592)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 0.0ms | Allocations: 10651)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-06-09 15:02:41 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"B7o1UAO05aiTnwCbRPjhQm/cW/vci0sLBbpd2mOI4CAPVHu26GeA0X1RkKIFjX9L5qMp/vddGjKKYYhB8xet9g==", "session"=>{"email"=>"rproba@list.ru", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rproba@list.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 544)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 289ms (Views: 8.1ms | ActiveRecord: 6.0ms | Allocations: 15007)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-06-09 15:02:50 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"kTyd+PWvgMay7R2VAwkAYHv8PKzNxZxhgyu1eomlduauDpor3AIIQGT3OyEfWeAm4iZGpt9pszvk5qGierWF2Q==", "session"=>{"email"=>"rproba@list.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rproba@list.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:8080/users/1
+Completed 302 Found in 249ms (ActiveRecord: 1.1ms | Allocations: 1392)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:02:51 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCard Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" WHERE "cards"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:14
+  Rendered users/show.html.erb within layouts/application (Duration: 6.2ms | Allocations: 3427)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.4ms | Allocations: 8046)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column cards.user_id does not exist
+LINE 1: SELECT 1 AS one FROM "cards" WHERE "cards"."user_id" = $1 LI...
+                                           ^
+):
+    11:     </section>
+    12:   </aside>
+    13:   <div class="col-md-8">
+    14:     <% if @user.cards.any? %>
+    15:       <h3>Cards (<%= @user.cards.count %>)</h3>
+    16:       <ol class="microposts">
+    17:         <%= render @cards %>
+  
+app/views/users/show.html.erb:14
+Started GET "/" for 127.0.0.1 at 2021-06-09 15:02:56 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 0.4ms | Allocations: 79)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 7646)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 15:02:57 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (1.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 12.8ms | Allocations: 7591)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 3.9ms | Allocations: 3846)
+Completed 200 OK in 35ms (Views: 30.8ms | ActiveRecord: 1.1ms | Allocations: 22731)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2021-06-09 15:02:58 +0300
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.slim within layouts/cards
+  Rendered cards/_form.html.slim (Duration: 4.6ms | Allocations: 4665)
+  Rendered cards/new.html.slim within layouts/cards (Duration: 7.9ms | Allocations: 6737)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.8ms | Allocations: 537)
+Completed 200 OK in 45ms (Views: 17.9ms | ActiveRecord: 4.4ms | Allocations: 17466)
+
+
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 15:03:01 +0300
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"TYFTZuX//M85+Q0fj5tjzsJmdo+9E/7bu4sHgKXFxAHKSjFR/QJs2hxCqCe85Bfdyi6ANj2A5VwQ/ZlyJ1xtug==", "card"=>{"title"=>"das"}, "commit"=>"Create Card"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.8ms | Allocations: 1623)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Card.):
+  
+app/controllers/cards_controller.rb:37:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7971227839067702265)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddCardToUser (20210609121215)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "cards" ADD "user_id" bigint NOT NULL[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE  INDEX  "index_cards_on_user_id" ON "cards"  ("user_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "cards" ADD CONSTRAINT "fk_rails_8ef7749967"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210609121215"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddTodoToUser (20210609121224)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "todos" ADD "user_id" bigint NOT NULL[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE  INDEX  "index_todos_on_user_id" ON "todos"  ("user_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "todos" ADD CONSTRAINT "fk_rails_d94154aa95"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210609121224"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7971227839067702265)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-06-09 15:14:42 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 8.6ms | Allocations: 10260)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 38.2ms | ActiveRecord: 0.0ms | Allocations: 31073)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-06-09 15:14:43 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2592)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.0ms | Allocations: 10642)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-06-09 15:14:46 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"zezlOIlCoy2yPHY8MSfspGOdEw3Z/tZYuCsS7/pHNRXFAqveYpHGVFzy5gVwUnKt6uJhCPIoh2E38Md0ath4ww==", "session"=>{"email"=>"rinat_akhmethanov@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rinat_akhmethanov@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 544)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 11.6ms | ActiveRecord: 2.4ms | Allocations: 11339)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-06-09 15:14:55 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"KuQcl3pCPxExTy2iYFE0Yo2VrYT2J/+rFTKTtpy0MAcV1htEU++3l+dVCxZ8AdQkFE/XjuSL0PFy/4dub6TDOA==", "session"=>{"email"=>"rproba@list.ru", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rproba@list.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:30:in `remember'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_digest", "$2a$12$U03VvdKQBA06EQElJQk3T.hjvqVu4RocItF7B.uHeloItmqgaV68i"], ["updated_at", "2021-06-09 12:14:56.079985"], ["id", 1]]
+  ↳ app/models/user.rb:30:in `remember'
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:30:in `remember'
+Redirected to http://localhost:8080/users/1
+Completed 302 Found in 528ms (ActiveRecord: 13.2ms | Allocations: 7379)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:14:56 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCard Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" WHERE "cards"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:14
+  Rendered users/show.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1815)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 14.2ms | ActiveRecord: 2.3ms | Allocations: 13478)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 15:14:59 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 11.3ms | Allocations: 7603)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 3.6ms | Allocations: 3846)
+Completed 200 OK in 36ms (Views: 30.3ms | ActiveRecord: 0.5ms | Allocations: 22785)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2021-06-09 15:15:01 +0300
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.slim within layouts/cards
+  Rendered cards/_form.html.slim (Duration: 4.2ms | Allocations: 4665)
+  Rendered cards/new.html.slim within layouts/cards (Duration: 8.4ms | Allocations: 6724)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 1.0ms | Allocations: 534)
+Completed 200 OK in 38ms (Views: 18.5ms | ActiveRecord: 4.8ms | Allocations: 17721)
+
+
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 15:15:03 +0300
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"qaQzCi6l2x8tbWDUKy7Tq2N6t9TtCoD6g4STjXXKAV4ub1E9NlhLCgjWxewYUae4azJBbW2Zm30o8g1/91Oo5Q==", "card"=>{"title"=>"Hello world"}, "commit"=>"Create Card"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cards_controller.rb:40:in `block in create'
+  [1m[36mCard Create (1.5ms)[0m  [1m[32mINSERT INTO "cards" ("title", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Hello world"], ["created_at", "2021-06-09 12:15:03.680042"], ["updated_at", "2021-06-09 12:15:03.680042"], ["user_id", 1]]
+  ↳ app/controllers/cards_controller.rb:40:in `block in create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cards_controller.rb:40:in `block in create'
+Redirected to http://localhost:8080/cards/1
+Completed 302 Found in 22ms (ActiveRecord: 3.9ms | Allocations: 4567)
+
+
+Started GET "/cards/1" for 127.0.0.1 at 2021-06-09 15:15:03 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 1788)
+
+
+  
+NoMethodError (undefined method `cards' for nil:NilClass):
+  
+app/controllers/cards_controller.rb:19:in `show'
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 15:16:16 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  Rendered cards/index.html.slim within layouts/cards (Duration: 11.1ms | Allocations: 15473)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms | Allocations: 18792)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    10:     = link_to 'New Card', new_card_path
+    11: 
+    12:   ul.cards-list.js-cards-list
+    13:     - @cards.each do |card|
+    14:       li.cards-list__item.js-item data-card=card.to_json
+    15:         .cards-list__header
+    16:           = link_to card.title, card
+  
+app/views/cards/index.html.slim:13
+Started GET "/" for 127.0.0.1 at 2021-06-09 15:16:17 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 5.4ms | Allocations: 2847)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 44.9ms | ActiveRecord: 0.0ms | Allocations: 22994)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-06-09 15:16:22 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 13.8ms | Allocations: 2596)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 0.0ms | Allocations: 10768)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-06-09 15:16:22 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 543)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 7936)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-06-09 15:16:23 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"3qfa2+jma/raHj0r6RBTDm4P/gmjm+gJFm4QF1sucJDhld0IwUvjfAwEG5/1QLNI99WEA7E3x1NxowTPqD6Drw==", "session"=>{"email"=>"rproba@list.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rproba@list.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35:in `forget'
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_digest", nil], ["updated_at", "2021-06-09 12:16:23.508946"], ["id", 1]]
+  ↳ app/models/user.rb:35:in `forget'
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35:in `forget'
+Redirected to http://localhost:8080/users/1
+Completed 302 Found in 286ms (ActiveRecord: 9.6ms | Allocations: 9696)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:16:23 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCard Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" WHERE "cards"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (Duration: 19.4ms | Allocations: 8453)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 3.9ms | Allocations: 11701)
+
+
+  
+ActionView::Template::Error (Missing partial cards/_card with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :slim, :jbuilder]}. Searched in:
+  * "/home/koala/trello-be/app/views"
+  * "/home/koala/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/graphiql-rails-1.7.0/app/views"
+  * "/home/koala/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actiontext-6.0.3.7/app/views"
+  * "/home/koala/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actionmailbox-6.0.3.7/app/views"
+):
+    14:     <% if @user.cards.any? %>
+    15:       <h3>Cards (<%= @user.cards.count %>)</h3>
+    16:       <ol class="microposts">
+    17:         <%= render @cards %>
+    18:       </ol>
+    19:     <% end %>
+    20:   </div>
+  
+app/views/users/show.html.erb:17
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:16:55 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCard Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" WHERE "cards"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (Duration: 17.8ms | Allocations: 8920)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 7.6ms | Allocations: 20702)
+
+
+  
+ActionView::Template::Error (Missing partial cards/_card with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :slim, :jbuilder]}. Searched in:
+  * "/home/koala/trello-be/app/views"
+  * "/home/koala/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/graphiql-rails-1.7.0/app/views"
+  * "/home/koala/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actiontext-6.0.3.7/app/views"
+  * "/home/koala/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actionmailbox-6.0.3.7/app/views"
+):
+    14:     <% if @user.cards.any? %>
+    15:       <h3>Cards (<%= @user.cards.count %>)</h3>
+    16:       <ol class="microposts">
+    17:         <%= render @cards %>
+    18:       </ol>
+    19:     <% end %>
+    20:   </div>
+  
+app/views/users/show.html.erb:17
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:20:56 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCard Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "cards" WHERE "cards"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:15
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (Duration: 16.7ms | Allocations: 8073)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 8.5ms | Allocations: 21305)
+
+
+  
+ActionView::Template::Error (Missing partial cards/_card with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :slim, :jbuilder]}. Searched in:
+  * "/home/koala/trello-be/app/views"
+  * "/home/koala/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/graphiql-rails-1.7.0/app/views"
+  * "/home/koala/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actiontext-6.0.3.7/app/views"
+  * "/home/koala/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actionmailbox-6.0.3.7/app/views"
+):
+    14:     <% if @user.cards.any? %>
+    15:       <h3>Cards (<%= @user.cards.count %>)</h3>
+    16:       <ol class="microposts">
+    17:         <%= render @cards %>
+    18:       </ol>
+    19:     <% end %>
+    20:   </div>
+  
+app/views/users/show.html.erb:17
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:21:57 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered users/show.html.erb within layouts/application (Duration: 14.5ms | Allocations: 7227)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 7.8ms | Allocations: 20458)
+
+
+  
+ActionView::Template::Error (Missing partial cards/_card with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :slim, :jbuilder]}. Searched in:
+  * "/home/koala/trello-be/app/views"
+  * "/home/koala/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/graphiql-rails-1.7.0/app/views"
+  * "/home/koala/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actiontext-6.0.3.7/app/views"
+  * "/home/koala/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actionmailbox-6.0.3.7/app/views"
+):
+    13:   <div class="col-md-8">
+    14:       <h3>Cards (<%= @user.cards.count %>)</h3>
+    15:       <ol class="cards-list">
+    16:         <%= render @cards %>
+    17:       </ol>
+    18:   </div>
+    19: </div>
+  
+app/views/users/show.html.erb:16
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:25:56 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of cards/_card.html.erb [1 times] (Duration: 2.7ms | Allocations: 1509)
+  Rendered users/show.html.erb within layouts/application (Duration: 18.4ms | Allocations: 7394)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 83ms (Views: 48.3ms | ActiveRecord: 9.4ms | Allocations: 39386)
+
+
+Started GET "/logout" for 127.0.0.1 at 2021-06-09 15:29:53 +0300
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Redirected to http://localhost:8080/
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms | Allocations: 1318)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-09 15:29:53 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 15.6ms | Allocations: 10136)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 35.8ms | ActiveRecord: 0.0ms | Allocations: 18274)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-06-09 15:29:54 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 1516)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 33.9ms | ActiveRecord: 0.0ms | Allocations: 9570)
+
+
+Started GET "/signUp" for 127.0.0.1 at 2021-06-09 15:29:55 +0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 1.6ms | Allocations: 188)
+  Rendered users/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1675)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 28.6ms | ActiveRecord: 0.0ms | Allocations: 9219)
+
+
+Started POST "/users" for 127.0.0.1 at 2021-06-09 15:30:07 +0300
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"8zuoudDlFUFCI4fVNZnq1Ks620qIvN24uUs9YJCoS2MAK98Un4bD8JEowls4wif9lu3dhWLAgRRfxN0R53kGug==", "user"=>{"name"=>"Erik", "email"=>"erik@mail.ru", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Erik"], ["email", "erik@mail.ru"], ["created_at", "2021-06-09 12:30:07.765460"], ["updated_at", "2021-06-09 12:30:07.765460"], ["password_digest", "$2a$12$o0eOHubZyDcS1s8TinSk/enJhRdApneSICwCBsTjVBNeFUysUtvJe"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+Redirected to http://localhost:8080/users/2
+Completed 302 Found in 264ms (ActiveRecord: 3.6ms | Allocations: 3183)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2021-06-09 15:30:07 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered users/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1451)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.8ms | Allocations: 10195)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 15:30:13 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  Rendered cards/index.html.slim within layouts/cards (Duration: 8.2ms | Allocations: 8064)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 9014)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    10:     = link_to 'New Card', new_card_path
+    11: 
+    12:   ul.cards-list.js-cards-list
+    13:     - @cards.each do |card|
+    14:       li.cards-list__item.js-item data-card=card.to_json
+    15:         .cards-list__header
+    16:           = link_to card.title, card
+  
+app/views/cards/index.html.slim:13
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 15:31:21 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 44.1ms | Allocations: 30963)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 6.2ms | Allocations: 3847)
+Completed 200 OK in 73ms (Views: 61.0ms | ActiveRecord: 4.2ms | Allocations: 48981)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 15:31:22 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 4.8ms | Allocations: 2357)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 1.0ms | Allocations: 534)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.5ms | Allocations: 10212)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 15:31:23 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 12.7ms | Allocations: 2362)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.9ms | Allocations: 537)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 0.7ms | Allocations: 10324)
+
+
+Started GET "/cards/1" for 127.0.0.1 at 2021-06-09 15:31:26 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.5ms | Allocations: 2097)
+
+
+  
+NoMethodError (undefined method `cards' for nil:NilClass):
+  
+app/controllers/cards_controller.rb:19:in `show'
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 15:31:30 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 7.0ms | Allocations: 2430)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.9ms | Allocations: 535)
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.6ms | Allocations: 10688)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 15:31:46 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 39.6ms | Allocations: 30963)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 3.3ms | Allocations: 3847)
+Completed 200 OK in 65ms (Views: 53.0ms | ActiveRecord: 3.8ms | Allocations: 48969)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-09 15:31:49 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 3.5ms | Allocations: 2834)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.0ms | Allocations: 11316)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-06-09 15:31:51 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 11.5ms | Allocations: 2590)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.0ms | Allocations: 10731)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-06-09 15:32:03 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"lZzD0jujzlW/TUtD+UGb1fi6+dA1o18MGoEqSTfRzfqdco000HCrLFGD23q4NAXcccWL1R51DjWVWv/Sp06ALA==", "session"=>{"email"=>"erik@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "erik@mail.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:8080/users/2
+Completed 302 Found in 271ms (ActiveRecord: 3.6ms | Allocations: 7184)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2021-06-09 15:32:04 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered users/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1781)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 12.9ms | ActiveRecord: 1.0ms | Allocations: 13068)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 15:32:07 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 5.7ms | Allocations: 2370)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 2.4ms | Allocations: 539)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.3ms | Allocations: 10256)
+
+
+Started GET "/cards/new" for 127.0.0.1 at 2021-06-09 15:32:14 +0300
+Processing by CardsController#new as HTML
+  Rendering cards/new.html.slim within layouts/cards
+  Rendered cards/_form.html.slim (Duration: 8.3ms | Allocations: 4614)
+  Rendered cards/new.html.slim within layouts/cards (Duration: 19.1ms | Allocations: 6685)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 1.0ms | Allocations: 534)
+Completed 200 OK in 35ms (Views: 31.6ms | ActiveRecord: 0.0ms | Allocations: 14794)
+
+
+Started POST "/cards" for 127.0.0.1 at 2021-06-09 15:32:19 +0300
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"2VKycPbiPbuFu30sXi51wAhCfNZiNxBoZK5V84QA7iRemdBH7h+trqAA2BRtUQHTAAqKb+KkC+/P2MsBBplHnw==", "card"=>{"title"=>"Monday"}, "commit"=>"Create Card"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cards_controller.rb:40:in `block in create'
+  [1m[36mCard Create (0.7ms)[0m  [1m[32mINSERT INTO "cards" ("title", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Monday"], ["created_at", "2021-06-09 12:32:19.603318"], ["updated_at", "2021-06-09 12:32:19.603318"], ["user_id", 2]]
+  ↳ app/controllers/cards_controller.rb:40:in `block in create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cards_controller.rb:40:in `block in create'
+Redirected to http://localhost:8080/cards/2
+Completed 302 Found in 34ms (ActiveRecord: 2.9ms | Allocations: 7340)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 15:32:19 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.4ms | Allocations: 1774)
+
+
+  
+NoMethodError (undefined method `cards' for nil:NilClass):
+  
+app/controllers/cards_controller.rb:19:in `show'
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 15:33:23 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 4.4ms | Allocations: 7362)
+
+
+  
+NoMethodError (undefined method `cards' for nil:NilClass):
+  
+app/controllers/cards_controller.rb:19:in `show'
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 15:33:25 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  Rendered cards/index.html.slim within layouts/cards (Duration: 12.7ms | Allocations: 15083)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 16068)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    10:     = link_to 'New Card', new_card_path
+    11: 
+    12:   ul.cards-list.js-cards-list
+    13:     - @cards.each do |card|
+    14:       li.cards-list__item.js-item data-card=card.to_json
+    15:         .cards-list__header
+    16:           = link_to card.title, card
+  
+app/views/cards/index.html.slim:13
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 15:34:05 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 42.3ms | Allocations: 31681)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 3.9ms | Allocations: 3847)
+Completed 200 OK in 70ms (Views: 57.6ms | ActiveRecord: 3.8ms | Allocations: 49710)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 15:34:07 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms | Allocations: 2077)
+
+
+  
+NoMethodError (undefined method `cards' for nil:NilClass):
+  
+app/controllers/cards_controller.rb:19:in `show'
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 15:34:10 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 6.8ms | Allocations: 3083)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 1.0ms | Allocations: 537)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.4ms | Allocations: 11139)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:34:28 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of cards/_card.html.erb [1 times] (Duration: 4.5ms | Allocations: 1479)
+  Rendered users/show.html.erb within layouts/application (Duration: 10.8ms | Allocations: 4339)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 21.0ms | ActiveRecord: 4.0ms | Allocations: 21642)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:34:56 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/_card.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cards/_card.html.erb:2
+  Rendered collection of cards/_card.html.erb [2 times] (Duration: 6.5ms | Allocations: 4217)
+  Rendered users/show.html.erb within layouts/application (Duration: 22.6ms | Allocations: 11531)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 81ms (Views: 53.3ms | ActiveRecord: 8.9ms | Allocations: 40659)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:34:57 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/_card.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cards/_card.html.erb:2
+  Rendered collection of cards/_card.html.erb [2 times] (Duration: 5.2ms | Allocations: 1911)
+  Rendered users/show.html.erb within layouts/application (Duration: 16.7ms | Allocations: 3543)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 26.9ms | ActiveRecord: 1.6ms | Allocations: 11729)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-09 15:38:22 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 9.9ms | Allocations: 11455)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 13407)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users"}, missing required keys: [:id]):
+     7: 
+     8: nav.menu
+     9:     => link_to 'Cards', cards_path, class: 'header__link'
+    10:     => link_to 'My Acc', user_path, class: 'header__link'
+  
+app/views/home/show.html.slim:10
+Started GET "/" for 127.0.0.1 at 2021-06-09 15:39:26 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 10.2ms | Allocations: 12038)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 13991)
+
+
+  
+ActionView::Template::Error (undefined method `id' for :current_user:Symbol):
+     7: 
+     8: nav.menu
+     9:     => link_to 'Cards', cards_path, class: 'header__link'
+    10:     => link_to 'My Acc', user_path(params[:current_user.id]), class: 'header__link'
+  
+app/views/home/show.html.slim:10
+Started GET "/" for 127.0.0.1 at 2021-06-09 15:42:35 +0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 11.6ms | Allocations: 12038)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 13990)
+
+
+  
+ActionView::Template::Error (undefined method `id' for :@current_user:Symbol):
+     7: 
+     8: nav.menu
+     9:     => link_to 'Cards', cards_path, class: 'header__link'
+    10:     => link_to 'My Acc', user_path(params[:@current_user.id]), class: 'header__link'
+  
+app/views/home/show.html.slim:10
+Started GET "/" for 127.0.0.1 at 2021-06-09 15:42:36 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 2.5ms | Allocations: 1561)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1974)
+
+
+  
+ActionView::Template::Error (undefined method `id' for :@current_user:Symbol):
+     7: 
+     8: nav.menu
+     9:     => link_to 'Cards', cards_path, class: 'header__link'
+    10:     => link_to 'My Acc', user_path(params[:@current_user.id]), class: 'header__link'
+  
+app/views/home/show.html.slim:10
+Started GET "/" for 127.0.0.1 at 2021-06-09 15:43:35 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 9.6ms | Allocations: 11468)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 13420)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users", :id=>nil}, missing required keys: [:id]):
+     7: 
+     8: nav.menu
+     9:     => link_to 'Cards', cards_path, class: 'header__link'
+    10:     => link_to 'My Acc', user_path(params[:@current_user]), class: 'header__link'
+  
+app/views/home/show.html.slim:10
+Started GET "/" for 127.0.0.1 at 2021-06-09 15:43:36 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 0.8ms | Allocations: 999)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1412)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users", :id=>nil}, missing required keys: [:id]):
+     7: 
+     8: nav.menu
+     9:     => link_to 'Cards', cards_path, class: 'header__link'
+    10:     => link_to 'My Acc', user_path(params[:@current_user]), class: 'header__link'
+  
+app/views/home/show.html.slim:10
+Started GET "/login" for 127.0.0.1 at 2021-06-09 15:44:10 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2602)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.0ms | Allocations: 22492)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-06-09 15:44:13 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"IFigNEVlC8rjaP6YuxT0mbg1gSG5d7B9FEac8/jcLDcfaqfnbMiDTDVy2CynRBTfIe/7K6vbnydzi4grC8zfCA==", "session"=>{"email"=>"rproba@list.ru", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rproba@list.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:30:in `remember'
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_digest", "$2a$12$gfmKJ8J9ikQ8m8thcoPc7exho7k1txrzggRaH.I4KjMoRyycKUCsq"], ["updated_at", "2021-06-09 12:44:14.471915"], ["id", 1]]
+  ↳ app/models/user.rb:30:in `remember'
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:30:in `remember'
+Redirected to http://localhost:8080/users/1
+Completed 302 Found in 523ms (ActiveRecord: 13.4ms | Allocations: 10185)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:44:14 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/_card.html.erb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cards/_card.html.erb:2
+  Rendered collection of cards/_card.html.erb [2 times] (Duration: 4.9ms | Allocations: 3062)
+  Rendered users/show.html.erb within layouts/application (Duration: 18.4ms | Allocations: 10257)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 25.7ms | ActiveRecord: 3.7ms | Allocations: 20328)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-09 15:44:20 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 0.9ms | Allocations: 1002)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1424)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users", :id=>nil}, missing required keys: [:id]):
+     7: 
+     8: nav.menu
+     9:     => link_to 'Cards', cards_path, class: 'header__link'
+    10:     => link_to 'My Acc', user_path(params[:@current_user]), class: 'header__link'
+  
+app/views/home/show.html.slim:10
+Started GET "/" for 127.0.0.1 at 2021-06-09 15:44:30 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 1.8ms | Allocations: 999)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1422)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users", :id=>nil}, missing required keys: [:id]):
+     7: 
+     8: nav.menu
+     9:     => link_to 'Cards', cards_path, class: 'header__link'
+    10:     => link_to 'My Acc', user_path(params[:@current_user]), class: 'header__link'
+  
+app/views/home/show.html.slim:10
+Started GET "/" for 127.0.0.1 at 2021-06-09 15:45:04 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 10.6ms | Allocations: 12038)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 14003)
+
+
+  
+ActionView::Template::Error (undefined method `id' for :@user:Symbol):
+     7: 
+     8: nav.menu
+     9:     => link_to 'Cards', cards_path, class: 'header__link'
+    10:     => link_to 'My Acc', user_path(params[:@user.id]), class: 'header__link'
+  
+app/views/home/show.html.slim:10
+Started GET "/" for 127.0.0.1 at 2021-06-09 15:45:48 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 9.7ms | Allocations: 11927)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 13892)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+     7: 
+     8: nav.menu
+     9:     => link_to 'Cards', cards_path, class: 'header__link'
+    10:     => link_to 'My Acc', user_path(@current_user.id), class: 'header__link'
+  
+app/views/home/show.html.slim:10
+Started GET "/" for 127.0.0.1 at 2021-06-09 15:51:12 +0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered home/show.html.slim within layouts/application (Duration: 32.8ms | Allocations: 17309)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 78ms (Views: 67.2ms | ActiveRecord: 4.4ms | Allocations: 38133)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:51:13 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/_card.html.erb:2
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cards/_card.html.erb:2
+  Rendered collection of cards/_card.html.erb [2 times] (Duration: 10.6ms | Allocations: 4104)
+  Rendered users/show.html.erb within layouts/application (Duration: 33.2ms | Allocations: 11314)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 64ms (Views: 50.9ms | ActiveRecord: 5.1ms | Allocations: 21988)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:51:24 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/users/show.html.erb:16
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/_card.html.erb:2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cards/_card.html.erb:2
+  Rendered collection of cards/_card.html.erb [2 times] (Duration: 3.3ms | Allocations: 1812)
+  Rendered users/show.html.erb within layouts/application (Duration: 6.7ms | Allocations: 3443)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 20.6ms | ActiveRecord: 1.4ms | Allocations: 12123)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 15:52:42 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (2.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 55.6ms | Allocations: 31680)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 6.6ms | Allocations: 3847)
+Completed 200 OK in 88ms (Views: 71.2ms | ActiveRecord: 6.9ms | Allocations: 49711)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:52:45 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of cards/_card.html.erb [1 times] (Duration: 3.5ms | Allocations: 1479)
+  Rendered users/show.html.erb within layouts/application (Duration: 13.2ms | Allocations: 4882)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 66ms (Views: 38.9ms | ActiveRecord: 6.0ms | Allocations: 21224)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:52:46 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of cards/_card.html.erb [1 times] (Duration: 0.7ms | Allocations: 173)
+  Rendered users/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1812)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 14.1ms | ActiveRecord: 0.9ms | Allocations: 9824)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:55:49 +0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of cards/_card.html.erb [1 times] (Duration: 3.2ms | Allocations: 1512)
+  Rendered users/show.html.erb within layouts/application (Duration: 22.5ms | Allocations: 8244)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 98ms (Views: 58.5ms | ActiveRecord: 9.8ms | Allocations: 38819)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:55:51 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of cards/_card.html.erb [1 times] (Duration: 2.4ms | Allocations: 173)
+  Rendered users/show.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1812)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.9ms | Allocations: 9825)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:56:20 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of cards/_card.html.erb [1 times] (Duration: 1.5ms | Allocations: 328)
+  Rendered users/show.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2258)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 1.1ms | Allocations: 11427)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:56:20 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of cards/_card.html.erb [1 times] (Duration: 0.8ms | Allocations: 173)
+  Rendered users/show.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1810)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 17.9ms | ActiveRecord: 1.2ms | Allocations: 9801)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:57:08 +0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of cards/_card.html.erb [1 times] (Duration: 3.0ms | Allocations: 1512)
+  Rendered users/show.html.erb within layouts/application (Duration: 30.7ms | Allocations: 8244)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 110ms (Views: 62.9ms | ActiveRecord: 10.6ms | Allocations: 38815)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:57:08 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of cards/_card.html.erb [1 times] (Duration: 0.8ms | Allocations: 173)
+  Rendered users/show.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1812)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 17.4ms | ActiveRecord: 1.0ms | Allocations: 9821)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 15:57:09 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of cards/_card.html.erb [1 times] (Duration: 0.5ms | Allocations: 167)
+  Rendered users/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1805)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 23.1ms | ActiveRecord: 1.2ms | Allocations: 9809)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 15:58:30 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 24.0ms | Allocations: 16823)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 6.4ms | Allocations: 3848)
+Completed 200 OK in 52ms (Views: 50.3ms | ActiveRecord: 0.4ms | Allocations: 32092)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 15:58:33 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 1771)
+
+
+  
+NoMethodError (undefined method `cards' for nil:NilClass):
+  
+app/controllers/cards_controller.rb:19:in `show'
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 15:59:29 +0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:78:in `set_card'
+  [1m[36mCard Load (2.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE (2) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:19:in `show'
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 6.9ms | Allocations: 8023)
+
+
+  
+ActiveRecord::StatementInvalid (PG::DatatypeMismatch: ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT "cards".* FROM "cards" WHERE (2) LIMIT $1
+                                             ^
+):
+  
+app/controllers/cards_controller.rb:19:in `show'
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 16:00:47 +0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 4.6ms | Allocations: 4015)
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 2]]
+  ↳ app/views/cards/show.html.slim:15
+  Rendered cards/show.html.slim within layouts/cards (Duration: 44.9ms | Allocations: 26015)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 5.0ms | Allocations: 3850)
+Completed 200 OK in 120ms (Views: 94.0ms | ActiveRecord: 8.1ms | Allocations: 59703)
+
+
+Started POST "/cards/2/todos" for 127.0.0.1 at 2021-06-09 16:00:58 +0300
+Processing by TodosController#create as JS
+  Parameters: {"authenticity_token"=>"HVujQybZJ0f7uU4mQHdI8eCWpOIefG/jgARIeyOQJM0iaaSQD3SvwS2jaJJcJ6i3eUze6AzQQLnnyVyj0IDX8g==", "title"=>"qqqq", "description"=>"qweqwe", "commit"=>"Save ", "card_id"=>"2"}
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:4:in `create'
+Redirected to http://localhost:8080/cards/2
+Completed 200 OK in 9ms (ActiveRecord: 0.3ms | Allocations: 4491)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 16:00:58 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 1.7ms | Allocations: 2305)
+  [1m[36mTodo Load (1.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 2]]
+  ↳ app/views/cards/show.html.slim:15
+  Rendered cards/show.html.slim within layouts/cards (Duration: 7.7ms | Allocations: 3301)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 1.1ms | Allocations: 536)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 1.5ms | Allocations: 11956)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-09 16:01:05 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered home/show.html.slim within layouts/application (Duration: 30.7ms | Allocations: 7395)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 34.8ms | ActiveRecord: 8.3ms | Allocations: 15851)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 16:01:06 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of cards/_card.html.erb [1 times] (Duration: 1.3ms | Allocations: 399)
+  Rendered users/show.html.erb within layouts/application (Duration: 11.9ms | Allocations: 3166)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 24.4ms | ActiveRecord: 1.8ms | Allocations: 12261)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 16:01:11 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 18.2ms | Allocations: 9503)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 1.1ms | Allocations: 536)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.6ms | Allocations: 17579)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 16:01:12 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 2.7ms | Allocations: 2303)
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 2]]
+  ↳ app/views/cards/show.html.slim:15
+  Rendered cards/show.html.slim within layouts/cards (Duration: 8.1ms | Allocations: 3296)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 1.3ms | Allocations: 533)
+Completed 200 OK in 29ms (Views: 24.3ms | ActiveRecord: 0.8ms | Allocations: 11731)
+
+
+Started POST "/cards/2/todos" for 127.0.0.1 at 2021-06-09 16:01:17 +0300
+Processing by TodosController#create as JS
+  Parameters: {"authenticity_token"=>"mUiTGYY4+kZZf4I0g06HV0lF8JEV+pOqoB87jVMmFEj68yD+ONzaypNSQEROcwi+ne08BWqFqcoIGQ///Nzppw==", "title"=>"qq", "description"=>"qweqwe", "commit"=>"Save ", "card_id"=>"2"}
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:4:in `create'
+Redirected to http://localhost:8080/cards/2
+Completed 200 OK in 5ms (ActiveRecord: 0.4ms | Allocations: 2070)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 16:01:17 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 2.4ms | Allocations: 2300)
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 2]]
+  ↳ app/views/cards/show.html.slim:15
+  Rendered cards/show.html.slim within layouts/cards (Duration: 5.9ms | Allocations: 3292)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.9ms | Allocations: 533)
+Completed 200 OK in 24ms (Views: 21.2ms | ActiveRecord: 0.7ms | Allocations: 11763)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 16:03:08 +0300
+  
+SyntaxError (/home/koala/trello-be/app/controllers/application_controller.rb:16: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/application_controller.rb:16: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:16: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:16: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/cards_controller.rb:3:in `<main>'
+Started GET "/" for 127.0.0.1 at 2021-06-09 16:03:21 +0300
+Started GET "/" for 127.0.0.1 at 2021-06-09 16:03:27 +0300
+Started GET "/" for 127.0.0.1 at 2021-06-09 16:03:37 +0300
+Started GET "/" for 127.0.0.1 at 2021-06-09 16:03:42 +0300
+Started GET "/" for 127.0.0.1 at 2021-06-09 16:03:42 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+Processing by HomeController#show as HTML
+  Rendered home/show.html.slim within layouts/application (Duration: 60.7ms | Allocations: 12863)
+  Rendering home/show.html.slim within layouts/application
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered home/show.html.slim within layouts/application (Duration: 22.0ms | Allocations: 6250)
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered home/show.html.slim within layouts/application (Duration: 11.8ms | Allocations: 2757)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered home/show.html.slim within layouts/application (Duration: 14.6ms | Allocations: 5714)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 142ms (Views: 105.5ms | ActiveRecord: 35.2ms | Allocations: 43304)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 76ms (Views: 70.5ms | ActiveRecord: 5.1ms | Allocations: 29524)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 83ms (Views: 76.7ms | ActiveRecord: 5.0ms | Allocations: 31580)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 102ms (Views: 84.4ms | ActiveRecord: 17.3ms | Allocations: 37608)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 16:03:44 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of cards/_card.html.erb [1 times] (Duration: 0.9ms | Allocations: 216)
+  Rendered users/show.html.erb within layouts/application (Duration: 26.3ms | Allocations: 5813)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 54ms (Views: 35.7ms | ActiveRecord: 9.3ms | Allocations: 15457)
+
+
+Started GET "/logout" for 127.0.0.1 at 2021-06-09 16:03:44 +0300
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35:in `forget'
+  [1m[36mUser Update (2.0ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_digest", nil], ["updated_at", "2021-06-09 13:03:44.970452"], ["id", 1]]
+  ↳ app/models/user.rb:35:in `forget'
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35:in `forget'
+Redirected to http://localhost:8080/
+Completed 302 Found in 23ms (ActiveRecord: 10.0ms | Allocations: 3307)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-09 16:03:44 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 4.0ms | Allocations: 1482)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1904)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+     7: 
+     8: nav.menu
+     9:     => link_to 'Cards', cards_path, class: 'header__link'
+    10:     => link_to 'My Acc', user_path(current_user.id), class: 'header__link'
+  
+app/views/home/show.html.slim:10
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 16:07:37 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 56.4ms | Allocations: 31681)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 4.4ms | Allocations: 3847)
+Completed 200 OK in 93ms (Views: 79.5ms | ActiveRecord: 4.1ms | Allocations: 49701)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-09 16:07:39 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 12.5ms | Allocations: 4964)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 6214)
+
+
+  
+ActionView::Template::Error (undefined method `id' for :current_user:Symbol):
+     7: 
+     8: nav.menu
+     9:     => link_to 'Cards', cards_path, class: 'header__link'
+    10:     -if session[:current_user.id]
+    11:       = link_to 'My Acc', user_path(current_user.id), class: 'header__link'
+    12:     -else
+    13:       = link_to 'Login', login_path, class: 'header__link'
+  
+app/views/home/show.html.slim:10
+Started GET "/" for 127.0.0.1 at 2021-06-09 16:08:27 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 17.1ms | Allocations: 12376)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms | Allocations: 14319)
+
+
+  
+ActionView::Template::Error (undefined method `id' for :@user:Symbol):
+     7: 
+     8: nav.menu
+     9:     => link_to 'Cards', cards_path, class: 'header__link'
+    10:     -if session[:@user.id]
+    11:       = link_to 'My Acc', user_path(current_user.id), class: 'header__link'
+    12:     -else
+    13:       = link_to 'Login', login_path, class: 'header__link'
+  
+app/views/home/show.html.slim:10
+Started GET "/" for 127.0.0.1 at 2021-06-09 16:09:19 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 14.6ms | Allocations: 10796)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 59ms (Views: 51.1ms | ActiveRecord: 0.0ms | Allocations: 31598)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-06-09 16:09:24 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 2592)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.0ms | Allocations: 10634)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-06-09 16:09:26 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"ws/MBc9KuzBFOHXTYem2sxIm6TbnDmlSlOXxsijj/QTKIYLjJJneSav25eognCi6m1mbM8zYOGsbPiQpuHyw0g==", "session"=>{"email"=>"rproba@list.ru", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rproba@list.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:30:in `remember'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_digest", "$2a$12$ncNqvrEdIDU0HYUkslu.tegKBkZsivcvSrtQZBWqzf.ubTsQp5dHG"], ["updated_at", "2021-06-09 13:09:27.199714"], ["id", 1]]
+  ↳ app/models/user.rb:30:in `remember'
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:30:in `remember'
+Redirected to http://localhost:8080/users/1
+Completed 302 Found in 597ms (ActiveRecord: 15.2ms | Allocations: 10207)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 16:09:27 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of cards/_card.html.erb [1 times] (Duration: 1.0ms | Allocations: 348)
+  Rendered users/show.html.erb within layouts/application (Duration: 23.5ms | Allocations: 6972)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 57ms (Views: 30.1ms | ActiveRecord: 5.1ms | Allocations: 18558)
+
+
+Started GET "/logout" for 127.0.0.1 at 2021-06-09 16:09:30 +0300
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35:in `forget'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_digest", nil], ["updated_at", "2021-06-09 13:09:30.091318"], ["id", 1]]
+  ↳ app/models/user.rb:35:in `forget'
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35:in `forget'
+Redirected to http://localhost:8080/
+Completed 302 Found in 13ms (ActiveRecord: 3.9ms | Allocations: 3290)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-09 16:09:30 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  Rendered home/show.html.slim within layouts/application (Duration: 0.4ms | Allocations: 139)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 7539)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-06-09 16:09:31 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 552)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.0ms | Allocations: 7921)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-06-09 16:09:32 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Ot970leWx+MXBdUgoh36nUhLoiIh6xH2Lb3vgT3cGw0yMTU0vEWimvnLRRnjaGSUwTTQJwo9QM+iZjoarUNW2w==", "session"=>{"email"=>"rproba@list.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rproba@list.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://localhost:8080/users/1
+Completed 302 Found in 306ms (ActiveRecord: 0.4ms | Allocations: 1071)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 16:09:32 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of cards/_card.html.erb [1 times] (Duration: 0.6ms | Allocations: 158)
+  Rendered users/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1794)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 12.1ms | ActiveRecord: 1.3ms | Allocations: 9763)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-09 16:09:37 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered home/show.html.slim within layouts/application (Duration: 3.0ms | Allocations: 754)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.5ms | Allocations: 8135)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 16:09:53 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 21.2ms | Allocations: 9519)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 5.9ms | Allocations: 3859)
+Completed 200 OK in 52ms (Views: 49.5ms | ActiveRecord: 0.4ms | Allocations: 24718)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 16:09:54 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 2.6ms | Allocations: 2542)
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 2]]
+  ↳ app/views/cards/show.html.slim:15
+  Rendered cards/show.html.slim within layouts/cards (Duration: 31.8ms | Allocations: 15399)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.8ms | Allocations: 534)
+Completed 200 OK in 47ms (Views: 39.1ms | ActiveRecord: 4.7ms | Allocations: 24074)
+
+
+Started POST "/cards/2/todos" for 127.0.0.1 at 2021-06-09 16:09:59 +0300
+Processing by TodosController#create as JS
+  Parameters: {"authenticity_token"=>"MmJq6kgJHIQlvGEKt122/HePcpRAk5yIkEcj/3GedP5R2dkN9u08CO+Ro3p6YDkVoye+AD/spug4QReN3mSJEQ==", "title"=>"qqqq", "description"=>"qqqqq", "commit"=>"Save ", "card_id"=>"2"}
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:4:in `create'
+Redirected to http://localhost:8080/cards/2
+Completed 200 OK in 9ms (ActiveRecord: 0.5ms | Allocations: 2772)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 16:09:59 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 2.0ms | Allocations: 2300)
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 2]]
+  ↳ app/views/cards/show.html.slim:15
+  Rendered cards/show.html.slim within layouts/cards (Duration: 4.9ms | Allocations: 3294)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.8ms | Allocations: 533)
+Completed 200 OK in 22ms (Views: 18.6ms | ActiveRecord: 0.8ms | Allocations: 11726)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 16:14:14 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 6.5ms | Allocations: 4015)
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 2]]
+  ↳ app/views/cards/show.html.slim:15
+  Rendered cards/show.html.slim within layouts/cards (Duration: 39.8ms | Allocations: 25990)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 6.0ms | Allocations: 3850)
+Completed 200 OK in 117ms (Views: 87.2ms | ActiveRecord: 10.4ms | Allocations: 59673)
+
+
+Started POST "/cards/2/todos" for 127.0.0.1 at 2021-06-09 16:14:19 +0300
+Processing by TodosController#create as JS
+  Parameters: {"authenticity_token"=>"RlgO40M2S1bACWqKD8kXTcKjG6Koc/zZdMV8fU2hnrd5agkwapvD0BYTTD4TmfcLW3lhqLrf04MTCGilvrFtiA==", "title"=>"qqqq", "description"=>"12421", "commit"=>"Save ", "card_id"=>"2"}
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:4:in `create'
+Redirected to http://localhost:8080/cards/2
+Completed 200 OK in 9ms (ActiveRecord: 0.9ms | Allocations: 4462)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 16:14:19 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 3.0ms | Allocations: 2305)
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 2]]
+  ↳ app/views/cards/show.html.slim:15
+  Rendered cards/show.html.slim within layouts/cards (Duration: 7.2ms | Allocations: 3301)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.8ms | Allocations: 536)
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.9ms | Allocations: 11937)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-09 16:14:39 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered home/show.html.slim within layouts/application (Duration: 29.1ms | Allocations: 7745)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 51ms (Views: 43.8ms | ActiveRecord: 5.6ms | Allocations: 16180)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 16:14:43 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of cards/_card.html.erb [1 times] (Duration: 1.2ms | Allocations: 399)
+  Rendered users/show.html.erb within layouts/application (Duration: 9.7ms | Allocations: 3166)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 19.0ms | ActiveRecord: 2.8ms | Allocations: 12241)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-09 16:15:53 +0300
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (2.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 73.7ms | Allocations: 31680)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 8.0ms | Allocations: 3847)
+Completed 200 OK in 120ms (Views: 96.4ms | ActiveRecord: 6.4ms | Allocations: 49692)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 16:15:54 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 5.6ms | Allocations: 3985)
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 2]]
+  ↳ app/views/cards/show.html.slim:15
+  Rendered cards/show.html.slim within layouts/cards (Duration: 53.8ms | Allocations: 18561)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.8ms | Allocations: 537)
+Completed 200 OK in 72ms (Views: 58.0ms | ActiveRecord: 7.3ms | Allocations: 27757)
+
+
+Started POST "/cards/2/todos" for 127.0.0.1 at 2021-06-09 16:16:00 +0300
+Processing by TodosController#create as JS
+  Parameters: {"authenticity_token"=>"w/+Xu7Ig5+QelGmR0M2kMWPjy7BwkkgpsF6DCRUmQdygRCRcDMTHaNS5q+Ed8CvYt0sHJA/tckkYWLd7uty8Mw==", "title"=>"asdas", "description"=>"12331", "commit"=>"Save ", "card_id"=>"2"}
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:4:in `create'
+Redirected to http://localhost:8080/cards/2
+Completed 200 OK in 8ms (ActiveRecord: 0.3ms | Allocations: 4455)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 16:16:00 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 2.0ms | Allocations: 2300)
+  [1m[36mTodo Load (1.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 2]]
+  ↳ app/views/cards/show.html.slim:15
+  Rendered cards/show.html.slim within layouts/cards (Duration: 7.5ms | Allocations: 3295)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.9ms | Allocations: 533)
+Completed 200 OK in 22ms (Views: 17.4ms | ActiveRecord: 1.7ms | Allocations: 11743)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 16:17:07 +0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (1.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 4.6ms | Allocations: 4504)
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 2]]
+  ↳ app/views/cards/show.html.slim:15
+  Rendered cards/show.html.slim within layouts/cards (Duration: 40.4ms | Allocations: 26479)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 4.2ms | Allocations: 3850)
+Completed 200 OK in 121ms (Views: 85.1ms | ActiveRecord: 8.9ms | Allocations: 60156)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 16:17:08 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 3.7ms | Allocations: 2778)
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 2]]
+  ↳ app/views/cards/show.html.slim:15
+  Rendered cards/show.html.slim within layouts/cards (Duration: 7.3ms | Allocations: 3775)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.9ms | Allocations: 536)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.8ms | Allocations: 12402)
+
+
+Started POST "/cards/2/todos" for 127.0.0.1 at 2021-06-09 16:17:11 +0300
+Processing by TodosController#create as JS
+  Parameters: {"authenticity_token"=>"kjBVMONqVg9PccKeV6HIvT3ts5Z7pUR8C/o3iq9/RCutAlLjysfeiZlr5CpL8Sj7pDfJnGkJayZsNyNSXG+3FA==", "title"=>"123", "description"=>"dfdsf", "user_id"=>"1", "commit"=>"Save ", "card_id"=>"2"}
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:4:in `create'
+Redirected to http://localhost:8080/cards/2
+Completed 200 OK in 9ms (ActiveRecord: 0.3ms | Allocations: 4454)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 16:17:11 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 1.8ms | Allocations: 2770)
+  [1m[36mTodo Load (0.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 2]]
+  ↳ app/views/cards/show.html.slim:15
+  Rendered cards/show.html.slim within layouts/cards (Duration: 7.4ms | Allocations: 3763)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 1.0ms | Allocations: 533)
+Completed 200 OK in 22ms (Views: 19.2ms | ActiveRecord: 1.2ms | Allocations: 12202)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 16:17:37 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 5.7ms | Allocations: 4581)
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 2]]
+  ↳ app/views/cards/show.html.slim:15
+  Rendered cards/show.html.slim within layouts/cards (Duration: 47.3ms | Allocations: 26555)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 9.8ms | Allocations: 3850)
+Completed 200 OK in 129ms (Views: 98.7ms | ActiveRecord: 7.4ms | Allocations: 60236)
+
+
+Started POST "/cards/2/todos" for 127.0.0.1 at 2021-06-09 16:17:45 +0300
+Processing by TodosController#create as JS
+  Parameters: {"authenticity_token"=>"iuttJ/XjPuFZXHAvxvR2pwpNbR+KYVw9trWy/AXeARa12Wr03E62Z49GVpvapJbhk5cXFZjNc2fReKYk9s7yKQ==", "title"=>"1234", "description"=>"fdsfsd", "user_id"=>"1", "commit"=>"Save ", "card_id"=>"2"}
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:4:in `create'
+Redirected to http://localhost:8080/cards/2
+Completed 200 OK in 10ms (ActiveRecord: 0.4ms | Allocations: 4459)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 16:17:45 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 3.6ms | Allocations: 2834)
+  [1m[36mTodo Load (0.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 2]]
+  ↳ app/views/cards/show.html.slim:15
+  Rendered cards/show.html.slim within layouts/cards (Duration: 8.7ms | Allocations: 3830)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 1.0ms | Allocations: 536)
+Completed 200 OK in 22ms (Views: 19.2ms | ActiveRecord: 1.2ms | Allocations: 12476)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 16:18:51 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 5.7ms | Allocations: 4581)
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 2]]
+  ↳ app/views/cards/show.html.slim:15
+  Rendered cards/show.html.slim within layouts/cards (Duration: 42.0ms | Allocations: 26560)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 4.6ms | Allocations: 3850)
+Completed 200 OK in 116ms (Views: 83.0ms | ActiveRecord: 9.9ms | Allocations: 60223)
+
+
+Started POST "/cards/2/todos" for 127.0.0.1 at 2021-06-09 16:18:55 +0300
+Processing by TodosController#create as JS
+  Parameters: {"authenticity_token"=>"udAD0vxbAmFJbh590CxIBc4ax49SSULlof8n0pZuEcOG4gQB1faK5590OMnMfKhDV8C9hUDlbb/GMjMKZX7i/A==", "title"=>"qwewqe", "description"=>"124213", "user_id"=>"1", "commit"=>"Save ", "card_id"=>"2"}
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:4:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:6:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:6:in `create'
+  [1m[36mTodo Create (1.0ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "created_at", "updated_at", "card_id", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "qwewqe"], ["description", "124213"], ["created_at", "2021-06-09 13:18:55.943911"], ["updated_at", "2021-06-09 13:18:55.943911"], ["card_id", 2], ["user_id", 1]]
+  ↳ app/controllers/todos_controller.rb:6:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:6:in `create'
+Redirected to http://localhost:8080/cards/2
+Completed 200 OK in 36ms (ActiveRecord: 7.3ms | Allocations: 11206)
+
+
+Started GET "/cards/2" for 127.0.0.1 at 2021-06-09 16:18:55 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 2.4ms | Allocations: 2833)
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 2]]
+  ↳ app/views/cards/show.html.slim:15
+  Rendered cards/show.html.slim within layouts/cards (Duration: 7.2ms | Allocations: 4530)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 0.9ms | Allocations: 536)
+Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.7ms | Allocations: 13055)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-09 16:19:07 +0300
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered home/show.html.slim within layouts/application (Duration: 9.9ms | Allocations: 3933)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 0.4ms | Allocations: 12378)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2021-06-09 16:19:09 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of cards/_card.html.erb [1 times] (Duration: 1.2ms | Allocations: 397)
+  Rendered users/show.html.erb within layouts/application (Duration: 10.4ms | Allocations: 3159)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 23.0ms | ActiveRecord: 2.0ms | Allocations: 12240)
+
+

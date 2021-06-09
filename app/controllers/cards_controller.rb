@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 class CardsController < ApplicationController
+  #before_action :logged_in_user, only: [:create, :destroy]
   before_action :set_card, only: %i[show edit update destroy]
 
   layout 'cards'
+
+
   # GET /cards
   # GET /cards.json
   def index
@@ -12,7 +15,8 @@ class CardsController < ApplicationController
 
   # GET /cards/1
   # GET /cards/1.json
-  def show; end
+  def show;
+  end
 
   # GET /cards/new
   def new
@@ -25,7 +29,11 @@ class CardsController < ApplicationController
   # POST /cards
   # POST /cards.json
   def create
-    @card = Card.new(card_params)
+=begin
+     @card = Card.new(card_params)
+=end
+
+    @card = current_user.cards.build(card_params)
 
     respond_to do |format|
       if @card.save

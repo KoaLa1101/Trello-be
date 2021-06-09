@@ -1,0 +1,9 @@
+<li id="cards-list<%= card.id %>" class="d-flex flex-column">
+  <%= link_to gravatar_for(card.user), card.user %>
+  <span class="content"><%= card.title %></span>
+  <span class="timestamp">
+    Created at <%= time_ago_in_words(card.created_at) %> ago.
+    <p> By <span class="user"><%= link_to card.user.name, card.user %></span></p>
+
+  </span>
+</li>
