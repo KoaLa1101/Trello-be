@@ -20,6 +20,8 @@ p
             =	todo.title
           ' :
           =	todo.description
+          |  created By
+          = User.find_by(id: todo.user_id).name
           = link_to todo_path(id: todo.id), method: :delete, data: { confirm: "Are you sure?" }, class: 'todos__icon' do
             = image_tag 'delete.svg'
         end
