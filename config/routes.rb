@@ -2,13 +2,19 @@
 
 Rails.application.routes.draw do
   if Rails.env.development?
-    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
+    mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
   end
-  post "/graphql", to: "graphql#execute"
+  post '/graphql', to: 'graphql#execute'
   get 'todos/create'
   get 'todos/destroy'
   get 'home/show'
+  get 'signUp' => 'users#new'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  get 'logout' => 'sessions#destroy'
+
   root to: 'home#show'
+  resources :users
 
   resources :cards do
     resources :todos, only: [:create]
