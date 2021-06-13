@@ -9976,3 +9976,177 @@ Processing by CardsController#show as HTML
 Completed 200 OK in 100ms (Views: 77.8ms | ActiveRecord: 3.4ms | Allocations: 19933)
 
 
+Started GET "/" for 127.0.0.1 at 2021-06-13 14:34:39 +0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.slim within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendered home/show.html.slim within layouts/application (Duration: 43.5ms | Allocations: 17658)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 115ms (Views: 90.6ms | ActiveRecord: 6.5ms | Allocations: 38461)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2021-06-13 14:34:41 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 3)
+  Rendered users/show.html.erb within layouts/application (Duration: 22.0ms | Allocations: 2639)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 85ms (Views: 50.1ms | ActiveRecord: 7.5ms | Allocations: 14165)
+
+
+Started GET "/cards" for 127.0.0.1 at 2021-06-13 14:34:46 +0300
+Processing by CardsController#index as HTML
+  Rendering cards/index.html.slim within layouts/cards
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/views/cards/index.html.slim:13
+  Rendered cards/index.html.slim within layouts/cards (Duration: 96.8ms | Allocations: 13165)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 12.3ms | Allocations: 3847)
+Completed 200 OK in 160ms (Views: 147.4ms | ActiveRecord: 7.7ms | Allocations: 28601)
+
+
+Started GET "/cards/3" for 127.0.0.1 at 2021-06-13 14:34:47 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 12.5ms | Allocations: 4465)
+  [1m[36mTodo Load (1.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 3]]
+  ↳ app/views/cards/show.html.slim:15
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.slim:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.slim:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.slim:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.slim:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.slim:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.slim:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.slim:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.slim:24
+  Rendered cards/show.html.slim within layouts/cards (Duration: 111.3ms | Allocations: 25086)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 1.1ms | Allocations: 534)
+Completed 200 OK in 144ms (Views: 118.6ms | ActiveRecord: 13.8ms | Allocations: 34227)
+
+
+Started POST "/cards/3/todos" for 127.0.0.1 at 2021-06-13 14:34:56 +0300
+Processing by TodosController#create as JS
+  Parameters: {"authenticity_token"=>"hMpTZGT5TW/dpfslGsOtI70KAkK+PTuQqaJasZyc93LELsEpPlckUW4ppYNevsX+4mUTiLge9iTUCKMv40WiPw==", "title"=>"adsad", "description"=>"124213", "user_id"=>"4", "commit"=>"Save ", "card_id"=>"3"}
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:4:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/todos_controller.rb:6:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:6:in `create'
+  [1m[36mTodo Create (1.9ms)[0m  [1m[32mINSERT INTO "todos" ("title", "description", "created_at", "updated_at", "card_id", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "adsad"], ["description", "124213"], ["created_at", "2021-06-13 11:34:56.222398"], ["updated_at", "2021-06-13 11:34:56.222398"], ["card_id", 3], ["user_id", 4]]
+  ↳ app/controllers/todos_controller.rb:6:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/todos_controller.rb:6:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/mailers/to_do_mailer.rb:4:in `new_todo'
+  Rendering to_do_mailer/new_todo.html.erb within layouts/mailer
+  Rendered to_do_mailer/new_todo.html.erb within layouts/mailer (Duration: 0.6ms | Allocations: 164)
+ToDoMailer#new_todo: processed outbound mail in 6.4ms
+Delivered mail 60c5ed6047697_6124b6e78829c4@koala-TM1703.mail (1467.2ms)
+Date: Sun, 13 Jun 2021 14:34:56 +0300
+From: rproba1101@gmail.com
+To: rproba1101@gmail.com
+Message-ID: <60c5ed6047697_6124b6e78829c4@koala-TM1703.mail>
+Subject: New todo was created by Erikk
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<p>You got a new order from Erikk!</p>
+<p>
+  Order details<br>
+  --------------------------
+</p>
+<p>Name: Erikk</p>
+<p>Email: rproba1101@gmail.com</p>
+<p>
+  Message:<br>
+  ----------
+</p>
+<!--<p></p>-->
+</body>
+</html>
+  </body>
+</html>
+
+Redirected to http://localhost:8080/cards/3
+Completed 200 OK in 1556ms (ActiveRecord: 5.9ms | Allocations: 23281)
+
+
+Started GET "/cards/3" for 127.0.0.1 at 2021-06-13 14:34:57 +0300
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:77:in `set_card'
+  Rendering cards/show.html.slim within layouts/cards
+  Rendered todos/_form.html.erb (Duration: 6.4ms | Allocations: 2776)
+  [1m[36mTodo Load (0.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."card_id" = $1[0m  [["card_id", 3]]
+  ↳ app/views/cards/show.html.slim:15
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.slim:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.slim:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.slim:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.slim:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.slim:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.slim:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.slim:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.slim:24
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cards/show.html.slim:24
+  Rendered cards/show.html.slim within layouts/cards (Duration: 53.1ms | Allocations: 11888)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered application/_trello_header.html.slim (Duration: 2.3ms | Allocations: 534)
+Completed 200 OK in 92ms (Views: 80.1ms | ActiveRecord: 3.3ms | Allocations: 20794)
+
+
