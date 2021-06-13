@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CardsController < ApplicationController
-  before_action :logged_in_user, only: [:show]
+  before_action :logged_in_user, only: [:create, :destroy]
   before_action :set_card, only: %i[show edit update destroy]
 
   layout 'cards'
